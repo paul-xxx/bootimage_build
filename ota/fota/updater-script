@@ -1,0 +1,9 @@
+ui_print("Target: Sony/aosp_hikari/hikari:6.0/MRA58K/paul10091209:userdebug/test-keys");
+show_progress(0.750000, 0);
+ui_print("Patching system image unconditionally...");
+block_image_update("/dev/block/platform/msm_sdcc.1/by-num/p12", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat");
+show_progress(0.050000, 5);
+package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-num/p3");
+package_extract_file("recovery.img", "/dev/block/platform/msm_sdcc.1/by-num/p11");
+show_progress(0.200000, 10);
+ui_print("Installing for hikari-device Successfully...");
